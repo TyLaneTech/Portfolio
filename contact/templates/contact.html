@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+
+<style>
+
+
+form{
+	color: #fff;
+	margin-bottom: 3px;
+}
+.field{
+	resize: none;
+	color: #fff;
+	margin-top: 5px;
+	width: 100%;
+	background-color: #485159;
+	border-radius: 8px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #93a6b8;
+	margin-bottom: 15px;
+}
+.field:focus{
+	outline:none;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	transition: .5s;
+
+}
+
+
+.contactBox{
+	padding: 15px;
+	max-height: 471px !important;
+	min-height: 471px !important;
+	min-width: 665px;
+	max-width: 665px;
+	text-align: left;
+	display: block;
+	margin-left: 0px;
+	margin-right: auto;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #485159;
+	transition: 3s;
+	border-radius: 10px;
+	left: 15px;
+}
+.contactBox:hover{
+	border-style: solid;
+	border-width: 2px;
+	border-color: #93a6b8;
+	transition: 3s;
+}
+
+.contactInfo{
+	max-width: 400px;
+	right: 75px;
+}
+
+.contactBtn{
+	min-width: 100%;
+	min-height: 40px;
+	border-radius: 3px;
+	font-size: 12pt;
+	color:white;
+	background-color: transparent;
+	border-color: #485159;
+	transition: 1s !important;
+	margin-top: 5px ;
+}
+.contactBtn:hover{
+	background-color: transparent;
+	border-color: #c5e0fa;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	transition: 1s !important;
+}
+
+.wrapper{
+	position:absolute;
+	min-width:1200px;
+	max-height: 500px;
+}
+
+h3{
+	margin-bottom: 4px;
+}
+
+p{
+	font-size: 13pt;
+	color: #93a6b8;
+}
+.link{
+	color: #93a6b8;
+	transition: .3s;
+}
+.link:hover{
+	color: #c5e0fa;
+	transition: .3s;
+}
+
+
+
+.iconHvr .fbLink{
+	color:#3b5998;
+	transition: background 1s;
+		-webkit-transition: background 1s;
+		-webkit-transition: 1s !important;
+		-moz-transition: 1s !important;
+}
+.iconHvr .ytLink{
+	color:#ff0000;
+	transition: background 1s;
+		-webkit-transition: background 1s;
+		-webkit-transition: 1s !important;
+		-moz-transition: 1s !important;
+}
+.iconHvr .ghLink{
+	color:#fff;
+	transition: background 1s;
+	-webkit-transition: background 1s;
+	-webkit-transition: 1s !important;
+	-moz-transition: 1s !important;
+}
+.iconHvr .igLink{
+	background: -webkit-linear-gradient(25deg, #feda77, #f58529, #dd2a7b, #8134af, #515bd4);
+	transition: background 1s;
+	-webkit-transition: background 1s;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent; 
+	-webkit-transition: 1s !important;
+	-moz-transition: 1s !important;
+	
+}
+
+
+</style>
+
+
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Contact Me</title>
+	</head>
+	<h1>Contact Me</h1>
+	<hr>
+	<div class="row wrapper">
+	<div class="col-md-8 contactBox">
+	<form action="" method="POST">
+	{% csrf_token %}
+	Your Name: <br/><input type="text" name="name" class="field"/><br/>
+	Your Email: <br/><input type="text" name="email" class="field"/><br/>
+	Message: <br/><textarea cols="35" rows="8" name="message" class="field"></textarea><br/>
+	<input type="submit" value="Send" class="contactBtn"/>
+	</form>
+	</div>
+	<div class="col-md-5 contactInfo iconHvr">
+	<h3>Phone:</h3>
+	<p>903-272-0516</p>
+	<br>
+	<h3>Email:</h3>
+	<p>TyLaneTech@gmail.com</p>
+	<br>
+	<br>
+
+	<div class="iconHvr">
+	<a href="https://www.youtube.com/channel/UCIStXvo2RzG8nLI464Hxe-A?view_as=subscriber"><h3 class="link">Youtube <i class="fab fa-youtube ytLink"></i></h3></a>
+	</div>
+	<br>
+	<div class="iconHvr">
+	<a href="https://www.facebook.com/ty.lane.353"><h3 class="link">Facebook <i class="fab fa-facebook fbLink"></i></h3></a>
+	</div>
+	<br>
+	<div class="iconHvr">
+	<a href="https://github.com/TyLaneTech"><h3 class="link">Github <i class="fab fa-github ghLink"></i></h3></a>
+	</div>
+	<br>
+	<div class="iconHvr">
+	<a href="https://www.instagram.com/ty_bears/?hl=en"><h3 class="link">Instagram <i class="fab fa-instagram-square igLink"></i></h3></a>
+	</div>
+
+	<br>
+	</div>
+
+
+
+{% endblock %}

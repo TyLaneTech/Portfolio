@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+
+<!-- styling for video popup -->
+<style>
+.youtube{
+    font-size: 12pt !important;
+    color:white !important;
+    background-color: transparent !important;
+    border-color: #93a6b8 !important;
+    transition: .1s !important;
+    position:absolute;
+    bottom:25;
+    left:100;
+}
+.youtube:hover{
+    color: #93a6b8 !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19) !important;
+    transition: .1s !important;
+
+}
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+#text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+.parent { display: flex; }
+iframe{ justify-content: center;}
+</style>
+
+
+
+
+
+<h1>{{ project.title }}</h1>
+<hr>
+<div class="row">
+    <div class="col-md-8">
+        <img class="img-rounded" src="{{ project.image.url }}" alt="" width="100%">
+    </div>
+    
+    <div class="col-md-5">
+        <h5>About the project:</h5>
+        <p>{{ project.description }}</p>
+        <br>
+        <h5>Technology used:</h5>
+        <p>{{ project.technology }}</p>
+        <br>
+            <h5><a href="{{ project.github }}" target="_blank" class="btn btn-primary" class="">Github</a>
+            
+            
+                <!-- html for video popup -->
+                <div id="overlay" onclick="off()">
+                    <div id="text">
+                        <span onclick="stopVideo(this.getAttribute('vdoId'))" vdoId ="yvideo" id="CloseModalButton"  data-dismiss="modal">
+                            <iframe width="1136" id="video" height="640" style="position: center; border-radius: 15px; transition: 1s; border-style: solid; border-width: 2px; border-color: #485159;box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); " src="  {{ project.youtube }} " allowfullscreen>
+                        </span>
+                        </iframe>
+                    </div>
+                </div>
+            
+                <button class="btn btn-primary youtube" onclick="on()" style="font-size: 10pt;color:white;background-color: transparent;border-color: #fff; transition: 1s;">Video Demo</button>
+                
+                        </div>
+                    </div>
+                </div>
+            </h5>
+        
+    </div>
+</div>
+
+<!-- js for video popup   -->
+<script>
+function on() {
+    document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+    document.getElementById("overlay").style.display = "none";
+    var id = ("video")
+    var src = $j('iframe.'+id).attr('src');
+    $j('iframe.'+id).attr('src','');
+    $j('iframe.'+id).attr('src',src);
+}
+
+function stopVideo(id){
+    
+
+}
+</script>
+
+{% endblock %}

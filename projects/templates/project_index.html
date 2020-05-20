@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+<h1>Projects</h1>
+<p><small>Independant projects by Ty Lane</small></p>
+    <hr>
+        <div class="row">
+        {% for project in projects %}
+            <div class="col-md-4" onclick="location.href='{% url 'project_detail' project.pk %}'" style="cursor: pointer;">
+                <div class="card mb-2">
+                    <img class="card-img-top" src="{{ project.image.url }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.title }}</h5>
+                        <p class="card-text">{{ project.description  | slice:":286" }}...</p>
+                        <a href="{% url 'project_detail' project.pk %}"
+                            class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+{% endblock %}

@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+<style>
+
+.img-hover-zoom--brightness img {
+	transition: transform 0.7s, filter 0.5s ease-in-out;
+	transform-origin: center center;
+	filter: brightness(80%);
+	transition: .5s;
+}
+
+/* The Transformation */
+.img-hover-zoom--brightness:hover img {
+	filter: brightness(100%);
+	transform: scale(1);
+	transition: .5s;
+}
+
+
+#myProgress {
+	margin-top: 10px;
+	width: 90%;
+	background-color: #ddd;}
+#myBar {
+	width: 1%;
+	height: 30px;
+	background-color: #4CAF50;}
+	#myBar1 {
+		width: 1%;
+		height: 30px;
+		background-color: #4CAF50;}
+
+
+.col-md-8{
+	border-radius: 10px;
+}
+
+progress{
+	margin-top: 15px !important;
+	margin:10px;
+}
+
+.skills{
+	margin-left: 35px;
+	margin: 10px;
+	font-size: 15pt;
+	text-shadow: 7px 12px 20px #000;
+	color: #7490a8;
+}
+
+.skills:hover{
+	text-shadow: 12px 16px 15px #000;
+		color: #93a6b8 !important;
+}
+
+.weirdo{
+	margin-top: 20px;
+	color: #7490a8;
+}
+#prog{
+	width:65%;
+	
+}
+hr{
+	position: relative;
+	width:1120px;
+}
+br{
+	line-height:50px;
+}
+.skillRow{
+	padding: 10px;
+	padding-left: 20px;
+	border-style: solid;
+	margin-left: 0px;
+	border-radius: 10px;
+	border-width: 1.7px;
+	border-color: #485159;
+	margin-bottom: 100px;
+	transition: .3s;
+}
+
+.skillRow:hover{
+	text-shadow: 3px 5px 25px #000;
+	border-color: #93a6b8;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	transition: .3s;
+}
+
+
+
+
+</style>
+
+<body onload="move()">
+
+<h1>About Me</h1>
+<hr>
+<div class="row">
+	<div class="col-md-8 img-hover-zoom--brightness">
+		<img class="img-rounded " src="media/images/me1.jpg" alt="" width="100%" height="100%">
+	</div>
+	
+	<div class="col-md-5">
+		<h5>About Me:</h5>
+		<p> Hi, welcome to my portfolio website! <br><br>My full name is Ethan Ty Lane (I usually go by Ty). I recently
+		graduated from Southern Arkansas University with a bachelors degree in computer science.<br><br>
+		My main intrest is Python development, and im working daily to secure more versitile knowledge on the subject.<br><br>
+		I believe I could be a valueable asset to any team. I obsess over the quality of my work, and am effective at communicating thoughts, questions, ideas, and goals.
+		 
+		</p>
+				</div>
+			</h5>
+		
+	</div>
+	
+	<h1 class="Weirdo"> Skills </h1>
+	<hr>
+	<div class="row skillRow">
+	<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+	<link rel="stylesheet" href="media/icon/font-mfizz/font-mfizz.css">
+
+			<progress  max="100" value="85" id="prog"> </progress> <h2 class="skills">Python (4 Years) <i class="fab fa-python" style="vertical-align:middle;"></i></h2>
+			<progress  max="100" value="77" id="prog"> </progress> <h2 class="skills">C++ (3 Years) <i class="icon-cplusplus" style="font-size:1.2em; vertical-align:baseline;"></i></h2>
+			<progress  max="100" value="73" id="prog"> </progress> <h2 class="skills">Java (3 Years) <i class="icon-java-bold" style="font-size:1.45em; vertical-align:middle;"></i></i></h2>
+			<progress  max="100" value="67" id="prog"> </progress> <h2 class="skills">C# (2 Years) <i class="icon-csharp" style="font-size:1.2em; vertical-align:baseline;"></i></h2>
+			<progress  max="100" value="63" id="prog"> </progress> <h2 class="skills">JavaScript (2 Years) <i class="fab fa-js-square" style="vertical-align:middle;"></i></h2>
+			<progress  max="100" value="52" id="prog"> </progress> <h2 class="skills">PHP (2 Years) <i class="icon-php-alt" style="font-size:1.3em; vertical-align:baseline;"></i></h2>
+			<progress  max="100" value="44" id="prog"> </progress> <h2 class="skills">SQL (2 Years)  <i class="fas fa-database" style="vertical-align:middle;"> </i></h2>
+			<progress  max="100" value="35" id="prog"> </progress> <h2 class="skills">Django (1 Year)  <i class="devicon-django-plain" style="font-size:1.55em;  vertical-align:middle;"></i> </h2>
+			<br>
+			<br>
+			<progress  max="100" value="95" id="prog"> </progress> <h2 class="skills">MacOS Development (4 Years) <i class="fab fa-apple" style="vertical-align:middle;"></i></h2>
+			<progress  max="100" value="87" id="prog"> </progress> <h2 class="skills">Windows Development (4 Years) <i class="fab fa-windows" style="vertical-align:middle;"></i></h2>
+			<progress  max="100" value="69" id="prog"> </progress> <h2 class="skills">Web Development (2 Years) <i class="fas fa-code" style="vertical-align:middle;"></i></h2>
+			<progress  max="100" value="55" id="prog"> </progress> <h2 class="skills">Android Development (1 Year) <i class="fab fa-android" style="vertical-align:middle;"></i></h2>
+			<br>
+			<br>
+			<progress  max="100" value="89" id="prog"> </progress> <h2 class="skills">APIs (4 Years) <i class="fab fa-mixcloud fa-lg" style="vertical-align:middle;"></i></h2>
+			<progress  max="100" value="85" id="prog"> </progress> <h2 class="skills">GIT (3 Years) <i class="fab fa-git-alt fa-lg" style="vertical-align:middle;"></i></h2>
+			<progress  max="100" value="65" id="prog"> </progress> <h2 class="skills">AWS (2 Years) <i class="fab fa-aws" style="vertical-align:middle;"></i></h2>
+			<br>
+			<br>
+			<progress  max="100" value="98" id="prog"> </progress> <h2 class="skills">Photoshop (6 Years) <i class="devicon-photoshop-line" style="vertical-align:middle; font-size: 1.07em;"></i></h2>
+			<progress  max="100" value="90" id="prog"> </progress> <h2 class="skills">Graphic Design (6 Years) <i class="far fa-edit" style="vertical-align:middle;"></i></h2>
+			<progress  max="100" value="88" id="prog"> </progress> <h2 class="skills">Excel (7 Years) <i class="far fa-file-excel" style="vertical-align:middle;"></i></h2>
+
+
+
+			
+
+
+			
+
+
+
+			
+			
+		</div>
+		
+	</div>
+</body>
+	
+</div>
+
+	<script>
+	var i = 0;
+	function move() {
+		if (i == 0) {
+			i = 1;
+			var elem = document.getElementById("myBar");
+			var width = 1;
+			var id = setInterval(frame, 10);
+			function frame() {
+				if (width >= 100) {
+					clearInterval(id);
+					i = 0;
+				} else {
+					width++;
+					elem.style.width = width + "%";
+				}
+			}
+		}
+	}
+	
+	</script>
+
+
+
+{% endblock %}
